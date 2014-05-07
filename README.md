@@ -1,5 +1,4 @@
 ##Web开发最佳实践
-===============
 
 创造最好的全端web体验
 
@@ -235,15 +234,89 @@ ___
     </div>
 [完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addimages.html)
 
-图片宽度设置
+图片宽度设置100%对窄屏端想对比较友好，但是在宽屏却不是，我们将会**使其响应式**章节详细讨论
 
 ###### 添加表格化数据区域
 
+最后的区域是一个区域是表格化数据区域用来展现产品特定的数据
+
+Table标签应该用来而且仅用来展现表格数据，例如，矩阵型的数据
+
+	<div id="section3">
+      <h2>Mobile. Why should I care?</h2>
+      <p>It is huge.  Everywhere.</p>
+      <table>
+        <caption>
+          <p>Data from <a href="http://gs.statcounter.com/#desktop+mobile+tablet-comparison-ww-monthly-201303-201403">StatsCounter</a></p>
+        </caption>
+        <thead>
+           <tr>
+             <th>Country</th>
+             <th>Desktop share</th>
+             <th>Tablet share</th>
+             <th>Mobile share</th>
+           </tr>
+        </thead>
+        <colgroup>
+           <col span="1">
+           <col span="1">
+           <col span="1">
+           <col span="1">
+        </colgroup>
+        <tbody>
+         <tr>
+            <td data-th="Country"><a href="http://gs.statcounter.com/#desktop+mobile+tablet-comparison-IN-monthly-201303-201403">India</a></td>
+            <td data-th="Desktop share">32%</td>
+            <td data-th="Table share">1%</td>
+            <td data-th="Mobile share">67%</td>
+          </tr>
+          <tr>
+            <td data-th="Country"><a href="http://gs.statcounter.com/#desktop+mobile+tablet-comparison-GB-monthly-201303-201403">GB</a></td>
+            <td data-th="Desktop share">69%</td>
+            <td data-th="Table share">13%</td>
+            <td data-th="Mobile share">18%</td>
+          </tr>
+          <tr>
+            <td data-th="Country"><a href="http://gs.statcounter.com/#desktop+mobile+tablet-comparison-US-monthly-201303-201403">US</a></td>
+            <td data-th="Desktop share">69%</td>
+            <td data-th="Table share">9%</td>
+            <td data-th="Mobile share">22%</td>
+          </tr>
+          <tr>
+            <td data-th="Country"><a href="http://gs.statcounter.com/#desktop+mobile+tablet-comparison-CN-monthly-201303-201403">China</a></td>
+            <td data-th="Desktop share">86%</td>
+            <td data-th="Table share">4%</td>
+            <td data-th="Mobile share">10%</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+    </div>
+
+[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addcontent.html)
+
 ###### 增加FOOTER
+
+绝大部分网站都需要一个footer来展现期限和条约和免责声明和一些没有必要出现在导航以及主要内容区域的信息
+
+在这个网站，我们只是单纯放置条款和期限，联系页面以及社交媒体介绍
+
+	<div id="footer">
+      <div class="container">
+        <p>We always need a footer.</p>
+      </div>
+    </div>
+
+[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addcontent.html)
 
 #### 总结
 
+我们已经把页面的框架完成而且已经构建好了主要内容的骨架，我们需要注意的是是否所有关联的内容位置都已经符合业务需求
 
+![image](https://developers.google.com/web/fundamentals/getting-started/your-first-multi-screen-site/images/content.png)
+![image](https://developers.google.com/web/fundamentals/getting-started/your-first-multi-screen-site/images/narrowsite.png)
+
+你发现现在的页面跟屎一样，但我不会告诉你故意的。内容做一切页面最重要的组成部分，我们需要保证有一个坚实的信息结构和密度。下面将会开始把页面变得炫酷起来
 
 ####2. 使其响应式
 
