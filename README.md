@@ -309,7 +309,7 @@ Table标签应该用来而且仅用来展现表格数据，例如，矩阵型的
 
 [完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addcontent.html)
 
-#### 总结
+##### 总结
 
 我们已经把页面的框架完成而且已经构建好了主要内容的骨架，我们需要注意的是是否所有关联的内容位置都已经符合业务需求
 
@@ -385,17 +385,206 @@ viewport写在head而且只需要声明一次
 
 这个设计开始往凤姐方向发展在大概宽度为600px的时候，在现在这个栗子里，文本的长度就要超过10个单词（最佳英文阅读长度，中文呢？），这里就是我们要进行改造的点
 
-<video controls="" poster="images/firstbreakpoint.png" style="width: 100%"><source src="videos/firstbreakpoint.mov" type="video/mov"><source src="videos/firstbreakpoint.webm" type="video/webm"><p>If your browser doesn't support video. <a href="videos/firstbreakpoint.mov">Download the video</a>.</p></video>
-
-600px
+600px似乎是一个很好的分界点，因为这个点给了我们空间去重塑元素的位置去适应屏幕，我们将使用[Media Queries](https://developers.google.com/web/fundamentals/documentation/multi-device-layouts/rwd-fundamentals/#use-css-media-queries-for-responsiveness)
 
 	@media (min-width: 600px) {
     
 	}
+	
+大屏的空间将会给我们更大的灵活性去展现我们的内容。
 
+	你不需要一次性重写所有的元素，只需要一些必要的小调整
+	
+对于页面的正文我们需要：
+
+- 限制设计的最大宽度
+- 改变元素的padding和减少文字字体大小
+- 把表单使用浮动跟头部同行
+- 把video跟内容排版融合
+- 把图片变小同时让它们用更好的网格形式展现
+
+
+##### 限定设计的最大宽度
+
+我们需要做选取是两个主要的布局：窄屏下的viewport和宽屏的viewport，在我们刚刚构建的过程里已经极大的简化了。
+
+我们同样需要添加全屏显示（full-bleed）区域无论是两种viewport都是全屏显示，这样意味着我们限制最大宽度防止文字和图片不会变成超长的单行状态尤其是在超长屏幕（ultra-wide screens）。我们通常把这个值设置为**800px**
+
+为了做到这样效果，我们需要一个限制宽度和居中所有元素，我们要一个容器（container）包住所有主要区域和使用**margin：auto**。这在显示区域拖动的时候仍然能够保持最大宽度800px同时居中
+
+	<div class="container">...</div>
+
+[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
+
+	.container {
+      margin: auto;
+      max-width: 800px;
+    }
+ 
+[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
+
+##### 改变padding和字体变小
+
+在窄屏的viewport的时候，我们没有很多空间来展现内容，所以为了适应屏幕，排版的大小和分量经常需要彻底压缩
+
+在大点的viewport的时候，我们需要考虑的是用户在阅读是虽然屏幕变大了，但是同时距离也变远了。为了增加可读性，我们需要增加排版的大小和分量，所以我们通过改变padding来让区域之间更加清晰
+
+在我们的项目中，我们将会把区域的padding设置成宽度的5%，我们同时会增加每个区域头部的字体大小
+
+	#headline {
+      padding: 20px 5%;
+    }
+    
+[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
+
+##### 使元素适应宽屏
+
+在我们的窄屏viewport的时候是垂直的线性布局，所有主要区域都是以上下的形式来展现
+
+在宽屏的viewport下有着更多的空间可以用来优化内容的展现形式，以我们的页面来看，基于页面的信息结构我们可以：
+
+- 移动表单围绕头部的地方
+- 把视频放置到右边的关键位置
+- 铺开图片
+- 扩展表格
+
+###### 浮动表单元素
+
+窄屏viewport意味着我们缺少水平的空间舒服的放置我们所有元素
+
+为了更加有效使用水平空间需要打破直线的头部布局使得表单和列表并列一起
+
+	#headline #blurb {
+      float: left;
+      font-weight: 200;
+      width: 50%;
+      font-size: 18px;
+      box-sizing: border-box;
+      padding-right: 10px;
+    }
+ 
+
+
+    #headline #register {
+      float:right;
+      padding: 20px;
+      width: 50%;
+      box-sizing: border-box;
+      font-weight: 300;
+    }
+
+[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
+
+	#headline {
+      padding: 20px 5%;
+    }
+    
+[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
+
+
+###### 浮动视频元素
+
+video标签在窄屏的情况下设计成全屏宽度显示并且放置在了关键点列表后面，在宽屏的时候，video标签会变得太大导致放置在关键点列表下边的时候看起来很挫
+
+所以video元素需要移出垂直型的布局，放置倒关键点列表的旁边
+
+	#section1 ul {
+      box-sizing: border-box;
+      float: left;
+      width: 50%;
+      padding-right: 1em;
+    }
+    
+    #section1 video {
+      width: 50%;
+      float: right;
+    }
+
+[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
+
+###### 铺垫图片
+
+在窄屏的时候，图片是以全宽度进行垂直并列，但是要是宽屏的话就搓爆了
+
+为了让图片看起来比较舒服，此栗子把图片缩小到容器的宽度30%同时把图片都水平排列，同时加入了边界圆角（border-radius）和阴影（box-shadow）提高图片吸引力
+
+	#section2 div img {
+       width: 30%;
+       margin: 1%;
+       box-sizing: border-box;
+       border-radius: 50% 50%;
+       box-shadow: black 0px 0px 5px;
+     }
+
+###### 图片根据DPI变动
+
+我们需要考虑展现图片的时候是否是高清屏
+
+我们是以96dpi的屏幕来构建网站的，我们需要考虑高清屏底下的效果包括笔记本的retina屏幕的效果，通常的图片在高清屏就是马赛克
+
+我们的解决方案还没有全面铺开，下面的代码有一部分支持的浏览器可以这么写（译者本人通常使用js来在加载页面的时候进行判断dpi然后设置对应的图片）
+
+	<img src="photo.png" srcset="photo@2x.png 2x" />  
+
+###### 表格
+
+表格通常非常难适应窄屏所以需要特别考虑清楚
+
+我们推荐你在窄屏的情况下把表格变成两列，把对应的头部和单元格转换的更加垂直化
+
+在我们的网站里，我们为表格单独创造了一级响应式宽度，因为我们是先构造窄屏的样式在先，导致很难消除已经完成的样式，所以我们必须先写表格的宽屏样式，然后再写窄屏样式，，这样让我们有一个更加清晰的样式分离（这句译者表示不一定翻译对了）
+
+	@media screen and (max-width: 600px) {
+      table thead {
+        display: none;
+      }
+
+      table td {
+        display: block;
+        position: relative;
+        padding-left: 50%;
+        padding-top: 13px;
+        padding-bottom: 13px;
+        text-align: left;
+        background: #e9e9e9;
+      }
+
+      table td:before {
+        content: attr(data-th) " :";
+        display: inline-block;
+        color: #000000;
+        background: #e9e9e9;
+        border-right: 2px solid transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 33%;
+        max-height: 100%;
+
+        font-size: 16px;
+        font-weight: 300;
+        padding-left: 13px;
+        padding-top: 13px;
+      }
+    }
+    
+[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/content-with-styles.html)
+
+##### 结束语
+
+**恭喜！**. 当你跟着走到这里的时候，你已经完成了你第一个简单多终端产品页面了
+
+如果你跟着下面的建议继续做，你将走向炸天的旅途：
+
+1. 在你写下第一行代码之前，建立一个基本的信息结构和彻底明白你的要表现的内容
+2. 一定要设置viewport
+3. 先考虑窄屏（移动）端的内容展现形式
+4. 一旦你确立窄屏（移动）端的内容展现形式，增加宽度直到页面变成屎，你就开始设计第一级的响应式区域了
+5. 持续迭代
 ___
 
-### 多终端布局
+### 多终端布局（Coming Soon）
 
 不要假设你的用户喜好单一设备。无论用户使用什么设备访问都应该提供最好的体验。响应式设计的主要目标：创造网站和app在所有的屏幕大小有着最好的体验。
 
@@ -431,3 +620,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 ---
+译者：[@秃一了](http://www.weibo.com/1674540501/profile?rightmod=1&wvr=5&mod=personinfo)
