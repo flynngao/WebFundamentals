@@ -8,11 +8,11 @@
 
 ####目录
 
-0. 你的第一个多终端网站
-1. 多终端布局
-2. 图片，声音和视频
-3. 表单和输入
-4. 性能优化
+0. 搞起你的第一个多终端网站（Getting Start）
+1. 多终端布局(Multi-Device Layout)
+2. 图片，声音和视频(Images, Audio and Video)
+3. 表单和输入(Form and User Input)
+4. 性能优化(Optmizing Performanceå)
 
 ___
 
