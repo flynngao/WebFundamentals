@@ -313,8 +313,13 @@ Table标签应该用来而且仅用来展现表格数据，例如，矩阵型的
 
 我们已经把页面的框架完成而且已经构建好了主要内容的骨架，我们需要注意的是是否所有关联的内容位置都已经符合业务需求
 
-![image](https://developers.google.com/web/fundamentals/getting-started/your-first-multi-screen-site/images/content.png)
-![image](https://developers.google.com/web/fundamentals/getting-started/your-first-multi-screen-site/images/narrowsite.png)
+![未完成图](https://developers.google.com/web/fundamentals/getting-started/your-first-multi-screen-site/images/content.png)
+
+未完成图
+
+![完成图](https://developers.google.com/web/fundamentals/getting-started/your-first-multi-screen-site/images/narrowsite.png)
+
+完成图
 
 你发现现在的页面跟屎一样，但我不会告诉你故意的。内容做一切页面最重要的组成部分，我们需要保证有一个坚实的信息结构和密度。下面将会开始把页面变得炫酷起来
 
@@ -331,9 +336,62 @@ Table标签应该用来而且仅用来展现表格数据，例如，矩阵型的
 - 让元素适应宽屏
 - 结束语
 
+> 尿点
+> 
+> - 一定要使用veiwport
+> - 先以窄屏为基础来进行设计，然后在进行拓展
+> - 在你设定的各级响应式宽度为最低值来进行设计
+> - 在主要的几个响应式宽度对用户有着很好的展现（3，4大家自己看看原句理解）
 
+##### 增加一个viewport
 
+即使是最基本的页面，你**必须必须必须必须**有一个veiwport meta标签，veiwport是你构建多终端页面的最重要的组件，没有它你的网站在在移动端就是屎
 
+veiwport告诉浏览器页面必须撑开到整个页面。veiwport有很多设置项你可以专门来控制你的页面，默认我们都是设置成：
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/viewport.html)
+
+viewport写在head而且只需要声明一次
+
+##### 使用简单的样式
+
+我们的产品和公司已经样式规范提供了特定的品牌和字体规范
+
+###### 样式规范
+一个样式规范能够让用户对页面展现有着深入的理解而且保证页面设计的一致性
+
+配色：
+<div class="styles" style="font-family: monospace"><div style="background-color: #39b1a4">#39b1a4</div><div style="background-color: white">#ffffff</div><div style="background-color: #f5f5f5">#f5f5f5</div><div style="background-color: #e9e9e9">#e9e9e9</div><div style="background-color: #dc4d38">#dc4d38</div></div>
+
+###### 添加炫酷式（风格式）图片
+
+在上一章，我们已经完成了内容式图片的添加，这些图片对于产品描述是非常关键的。而炫酷式图片的不是内容上必要的，但是它是用户对各个内容关注度的指明灯
+
+一个很好的栗子就是首屏区域的图片，它们就是用来勾引用户进行更仔细的阅读（参考上面完成图）
+
+	#headline {
+  		padding: 0.8em;
+  		color: white;
+  		font-family: Roboto, sans-serif;
+  		background-image: url(backgroundimage.jpg);
+  		background-size: cover;
+	}
+	
+我们使用模糊化的背景图片不会抢了内容的风头，同时我们使用**cover**让元素在被拉伸的时候仍然保持正确的比例
+
+##### 设定你的第一个响应式宽度
+
+这个设计开始往凤姐方向发展在大概宽度为600px的时候，在现在这个栗子里，文本的长度就要超过10个单词（最佳英文阅读长度，中文呢？），这里就是我们要进行改造的点
+
+<video controls="" poster="images/firstbreakpoint.png" style="width: 100%"><source src="videos/firstbreakpoint.mov" type="video/mov"><source src="videos/firstbreakpoint.webm" type="video/webm"><p>If your browser doesn't support video. <a href="videos/firstbreakpoint.mov">Download the video</a>.</p></video>
+
+600px
+
+	@media (min-width: 600px) {
+    
+	}
 
 ___
 
@@ -349,4 +407,27 @@ ___
 
 ####导航和指引设计模式
 
+---
 
+### MIT license
+Copyright (c) 2013 Flynngao &lt;flynn.gao.y@gmail.com&gt;
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+---
