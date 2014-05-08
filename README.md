@@ -411,10 +411,11 @@ viewport写在head而且只需要声明一次
 
 600px似乎是一个很好的分界点，因为这个点给了我们空间去重塑元素的位置去适应屏幕，我们将使用[Media Queries](https://developers.google.com/web/fundamentals/documentation/multi-device-layouts/rwd-fundamentals/#use-css-media-queries-for-responsiveness)
 
-```
-@media (min-width: 600px) {
+
+```css
+	media (min-width: 600px) {
     
-}
+	}
 ```
 	
 大屏的空间将会给我们更大的灵活性去展现我们的内容。
@@ -438,14 +439,18 @@ viewport写在head而且只需要声明一次
 
 为了做到这样效果，我们需要一个限制宽度和居中所有元素，我们要一个容器（container）包住所有主要区域和使用**margin：auto**。这在显示区域拖动的时候仍然能够保持最大宽度800px同时居中
 
+```html
 	<div class="container">...</div>
+```
 
 [完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
 
+```css
 	.container {
       margin: auto;
       max-width: 800px;
     }
+```
  
 [完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
 
@@ -457,9 +462,11 @@ viewport写在head而且只需要声明一次
 
 在我们的项目中，我们将会把区域的padding设置成宽度的5%，我们同时会增加每个区域头部的字体大小
 
+```css
 	#headline {
       padding: 20px 5%;
     }
+```
     
 [完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
 
@@ -480,6 +487,7 @@ viewport写在head而且只需要声明一次
 
 为了更加有效使用水平空间需要打破直线的头部布局使得表单和列表并列一起
 
+```css
 	#headline #blurb {
       float: left;
       font-weight: 200;
@@ -488,9 +496,6 @@ viewport写在head而且只需要声明一次
       box-sizing: border-box;
       padding-right: 10px;
     }
- 
-
-
     #headline #register {
       float:right;
       padding: 20px;
@@ -498,13 +503,16 @@ viewport写在head而且只需要声明一次
       box-sizing: border-box;
       font-weight: 300;
     }
+```
 
 [完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
 
+```css
 	#headline {
       padding: 20px 5%;
     }
-    
+```
+
 [完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
 
 
@@ -514,17 +522,18 @@ video标签在窄屏的情况下设计成全屏宽度显示并且放置在了关
 
 所以video元素需要移出垂直型的布局，放置倒关键点列表的旁边
 
+```css
 	#section1 ul {
       box-sizing: border-box;
       float: left;
       width: 50%;
       padding-right: 1em;
     }
-    
     #section1 video {
       width: 50%;
       float: right;
     }
+```
 
 [完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
 
@@ -534,6 +543,7 @@ video标签在窄屏的情况下设计成全屏宽度显示并且放置在了关
 
 为了让图片看起来比较舒服，此栗子把图片缩小到容器的宽度30%同时把图片都水平排列，同时加入了边界圆角（border-radius）和阴影（box-shadow）提高图片吸引力
 
+```css
 	#section2 div img {
        width: 30%;
        margin: 1%;
@@ -541,6 +551,7 @@ video标签在窄屏的情况下设计成全屏宽度显示并且放置在了关
        border-radius: 50% 50%;
        box-shadow: black 0px 0px 5px;
      }
+```
 
 ###### 图片根据DPI变动
 
@@ -550,7 +561,9 @@ video标签在窄屏的情况下设计成全屏宽度显示并且放置在了关
 
 我们的解决方案还没有全面铺开，下面的代码有一部分支持的浏览器可以这么写（译者本人通常使用js来在加载页面的时候进行判断dpi然后设置对应的图片）
 
+```html
 	<img src="photo.png" srcset="photo@2x.png 2x" />  
+```
 
 ###### 表格
 
@@ -560,11 +573,11 @@ video标签在窄屏的情况下设计成全屏宽度显示并且放置在了关
 
 在我们的网站里，我们为表格单独创造了一级响应式宽度，因为我们是先构造窄屏的样式在先，导致很难消除已经完成的样式，所以我们必须先写表格的宽屏样式，然后再写窄屏样式，，这样让我们有一个更加清晰的样式分离（这句译者表示不一定翻译对了）
 
+```css
 	@media screen and (max-width: 600px) {
       table thead {
         display: none;
       }
-
       table td {
         display: block;
         position: relative;
@@ -574,7 +587,6 @@ video标签在窄屏的情况下设计成全屏宽度显示并且放置在了关
         text-align: left;
         background: #e9e9e9;
       }
-
       table td:before {
         content: attr(data-th) " :";
         display: inline-block;
@@ -587,13 +599,13 @@ video标签在窄屏的情况下设计成全屏宽度显示并且放置在了关
         bottom: 0;
         width: 33%;
         max-height: 100%;
-
         font-size: 16px;
         font-weight: 300;
         padding-left: 13px;
         padding-top: 13px;
       }
     }
+```
     
 [完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/content-with-styles.html)
 
