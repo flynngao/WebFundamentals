@@ -413,7 +413,7 @@ viewport写在head而且只需要声明一次
 
 
 ```css
-	media (min-width: 600px) {
+   @media (min-width: 600px) {
     
 	}
 ```
@@ -622,17 +622,19 @@ video标签在窄屏的情况下设计成全屏宽度显示并且放置在了关
 5. 持续迭代
 
 ---
-### 多终端布局（Coming Soon）
+### 多终端布局（Multi-Device Layouts）
 
 不要假设你的用户喜好单一设备。无论用户使用什么设备访问都应该提供最好的体验。响应式设计的主要目标：创造网站和app在所有的屏幕大小有着最好的体验。
 
-####响应式web设计基础
+####响应式web设计基础（Responsive Web Design Fundamentals）
 
 
-####响应式web设计模式
 
 
-####导航和指引设计模式
+####响应式web设计模式（Responsive Web Design Patterns）
+
+
+####导航和指引设计模式（Navigation and Action Patterns）
 
 ---
 
