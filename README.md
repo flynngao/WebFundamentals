@@ -166,6 +166,7 @@ ___
 
 这个章节的内容一般相对更加有深度，通常有一个无序的产品功能介绍列和一个视频展现产品是如何服务用户的
 
+```html
 	<div id="section1">
       <div class="container">
         <h2>What will I learn?</h2>
@@ -186,6 +187,7 @@ ___
         <br>
       </div>
     </div>
+```
     
     
 视频是一种互动性比较强的内容展现方式，所以经常用来介绍整个产品和产品的概念
@@ -196,14 +198,18 @@ ___
  * 增加异常情况的提醒，让用户在无法播放的情况可以下载视频
 
 以上有一些最佳实践的点你可以让你的视频和你的网站更加完美地契合。
- 
-    <video controls poster="udacity.png">
-      <source src="udacity.webm" type="video/webm"></source>
-      <source src="udacity.mov" type="video/mov"></source>
-      <p>Sorry your browser doesn't support video.
-         <a href="udacity.mov">Download the video</a>.
-      </p>
-    </video>
+
+
+
+```html
+<video controls poster="udacity.png">
+  <source src="udacity.webm" type="video/webm"></source>
+  <source src="udacity.mov" type="video/mov"></source>
+  <p>Sorry your browser doesn't support video.
+     <a href="udacity.mov">Download the video</a>.
+  </p>
+</video>
+```
     
 [完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addvideo.html)
     
@@ -216,28 +222,32 @@ ___
 
 图片区域是一个我们产品图片集锦
 
+```html
 	<div id="section2">
-      <div class="container">
-        <h2>Who will teach me?</h2>
-        <p>The worlds leading mobile web developers.</p>
-        <div id="images">
-          <img src="chriswilson.png" alt="Chris Wilson Course Instructor">
-          <img src="peterlubbers.png" alt="Peter Lubbers Course Instructor">
-          <img src="seanbennett.png" alt="Sean Bennet Course Developer">
-        </div>
-        <br>
-      </div>
-    </div>
-
+  		<div class="container">
+    		<h2>Who will teach me?</h2>
+    		<p>The worlds leading mobile web developers.</p>
+    	<div id="images">
+      		<img src="chriswilson.png" alt="Chris Wilson Course Instructor">
+      		<img src="peterlubbers.png" alt="Peter Lubbers Course Instructor">
+      		<img src="seanbennett.png" alt="Sean Bennet Course Developer">
+   		 </div>
+   			 <br>
+  		</div>
+	</div>
+```
 [完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addcontent.html)
 
 内容型图片是阐述内容的爆点，想想汪峰为什么上不了头条
 
+```html
 	 <div id="images">
       <img src="chriswilson.png" alt="Chris Wilson Course Instructor">
       <img src="peterlubbers.png" alt="Peter Lubbers Course Instructor">
       <img src="seanbennett.png" alt="Sean Bennet Course Developer">
     </div>
+``` 
+ 
 [完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addimages.html)
 
 图片宽度设置100%对窄屏端想对比较友好，但是在宽屏却不是，我们将会**使其响应式**章节详细讨论
@@ -248,6 +258,7 @@ ___
 
 Table标签应该用来而且仅用来展现表格数据，例如，矩阵型的数据
 
+```html
 	<div id="section3">
       <h2>Mobile. Why should I care?</h2>
       <p>It is huge.  Everywhere.</p>
@@ -298,6 +309,7 @@ Table标签应该用来而且仅用来展现表格数据，例如，矩阵型的
       </table>
       <br>
     </div>
+```
 
 [完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addcontent.html)
 
@@ -307,11 +319,13 @@ Table标签应该用来而且仅用来展现表格数据，例如，矩阵型的
 
 在这个网站，我们只是单纯放置条款和期限，联系页面以及社交媒体介绍
 
+`html
 	<div id="footer">
       <div class="container">
         <p>We always need a footer.</p>
       </div>
     </div>
+`
 
 [完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addcontent.html)
 
@@ -355,7 +369,9 @@ Table标签应该用来而且仅用来展现表格数据，例如，矩阵型的
 
 veiwport告诉浏览器页面必须撑开到整个页面。veiwport有很多设置项你可以专门来控制你的页面，默认我们都是设置成：
 
+```html
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
 
 [完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/viewport.html)
 
@@ -377,6 +393,7 @@ viewport写在head而且只需要声明一次
 
 一个很好的栗子就是首屏区域的图片，它们就是用来勾引用户进行更仔细的阅读（参考上面完成图）
 
+```css
 	#headline {
   		padding: 0.8em;
   		color: white;
@@ -384,6 +401,7 @@ viewport写在head而且只需要声明一次
   		background-image: url(backgroundimage.jpg);
   		background-size: cover;
 	}
+```
 	
 我们使用模糊化的背景图片不会抢了内容的风头，同时我们使用**cover**让元素在被拉伸的时候仍然保持正确的比例
 
@@ -393,9 +411,11 @@ viewport写在head而且只需要声明一次
 
 600px似乎是一个很好的分界点，因为这个点给了我们空间去重塑元素的位置去适应屏幕，我们将使用[Media Queries](https://developers.google.com/web/fundamentals/documentation/multi-device-layouts/rwd-fundamentals/#use-css-media-queries-for-responsiveness)
 
-	@media (min-width: 600px) {
+```
+@media (min-width: 600px) {
     
-	}
+}
+```
 	
 大屏的空间将会给我们更大的灵活性去展现我们的内容。
 
