@@ -43,6 +43,7 @@ ___
 
 下面的代码作为页面的基本骨架，剩下的部分将会基于这个骨架完成
 
+```html
 	<!doctype html>
     <html>
       <head>
@@ -86,6 +87,7 @@ ___
         </div>
           </body>
     </html>
+```
 
 [完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addstructure.html)
 
@@ -101,6 +103,7 @@ ___
 
 下面代码增加头部和一下表单项
 
+```html
 	<div id="headline">
       <div class="container">
         <h1>Mobile Web Development</h1>
@@ -131,6 +134,7 @@ ___
         <br>
       </div>
     </div>
+```
 
 [完整栗子](https://google-developers.appspot.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addcontent)
 
@@ -140,6 +144,7 @@ ___
 
 我们需要设置input有意义的type属性，使得用户可以更加方便的输入表单内容。举个栗子，用户输入手机号的时候，用户应该只有看到数字键盘
 
+```html
 	<form method="post" id="register">
       <h2>Register for the launch</h2>
       <label for="name">Name</label>
@@ -153,6 +158,7 @@ ___
         placeholder="(555) 555 5555" required />
       <input type="submit" value="Sign up">
     </form>
+```
 
 [完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/withform.html)
 
