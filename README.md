@@ -89,7 +89,7 @@ ___
     </html>
 ```
 
-[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addstructure.html)
+[完整栗子](http://googlesamples.github.io/web-fundamentals/samples/getting-started/your-first-multi-screen-site/addstructure.html)
 
 #####添加页面内容
 
@@ -136,7 +136,7 @@ ___
     </div>
 ```
 
-[完整栗子](https://google-developers.appspot.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addcontent)
+[完整栗子](http://googlesamples.github.io/web-fundamentals/samples/getting-started/your-first-multi-screen-site/addheadline.html)
 
 我们同样需要填写这表单，这个简单的表达收集用户名字，电话号码以及什么时候给他们电话最合适
 
@@ -160,7 +160,7 @@ ___
     </form>
 ```
 
-[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/withform.html)
+[完整栗子](http://googlesamples.github.io/web-fundamentals/samples/getting-started/your-first-multi-screen-site/addform.html)
 
 ###### 添加视频和详细信息区域
 
@@ -188,7 +188,7 @@ ___
       </div>
     </div>
 ```
-    
+[完整栗子](http://googlesamples.github.io/web-fundamentals/samples/getting-started/your-first-multi-screen-site/addcontent.html)    
     
 视频是一种互动性比较强的内容展现方式，所以经常用来介绍整个产品和产品的概念
 
@@ -211,7 +211,7 @@ ___
 </video>
 ```
     
-[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addvideo.html)
+[完整栗子](http://googlesamples.github.io/web-fundamentals/samples/getting-started/your-first-multi-screen-site/addvideo.html)
     
 ###### 添加图片区域
 
@@ -236,7 +236,7 @@ ___
   		</div>
 	</div>
 ```
-[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addcontent.html)
+[完整栗子](http://googlesamples.github.io/web-fundamentals/samples/getting-started/your-first-multi-screen-site/addimages.html)
 
 内容型图片是阐述内容的爆点，想想汪峰为什么上不了头条
 
@@ -248,7 +248,7 @@ ___
     </div>
 ``` 
  
-[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addimages.html)
+[完整栗子](http://googlesamples.github.io/web-fundamentals/samples/getting-started/your-first-multi-screen-site/addimages.html)
 
 图片宽度设置100%对窄屏端想对比较友好，但是在宽屏却不是，我们将会**使其响应式**章节详细讨论
 
@@ -311,7 +311,7 @@ Table标签应该用来而且仅用来展现表格数据，例如，矩阵型的
     </div>
 ```
 
-[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addcontent.html)
+[完整栗子](http://googlesamples.github.io/web-fundamentals/samples/getting-started/your-first-multi-screen-site/addcontent.html)
 
 ###### 增加FOOTER
 
@@ -327,7 +327,7 @@ Table标签应该用来而且仅用来展现表格数据，例如，矩阵型的
     </div>
 `
 
-[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/addcontent.html)
+[完整栗子](http://googlesamples.github.io/web-fundamentals/samples/getting-started/your-first-multi-screen-site/addcontent.html)
 
 ##### 总结
 
