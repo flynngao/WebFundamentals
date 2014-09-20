@@ -373,7 +373,7 @@ veiwport告诉浏览器页面必须撑开到整个页面。veiwport有很多设�
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
 
-[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/viewport.html)
+[完整栗子](http://googlesamples.github.io/web-fundamentals/samples/getting-started/your-first-multi-screen-site/viewport.html)
 
 viewport写在head而且只需要声明一次
 
@@ -443,7 +443,7 @@ viewport写在head而且只需要声明一次
 	<div class="container">...</div>
 ```
 
-[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
+[完整栗子](http://googlesamples.github.io/web-fundamentals/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
 
 ```css
 	.container {
@@ -452,7 +452,7 @@ viewport写在head而且只需要声明一次
     }
 ```
  
-[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
+[完整栗子](http://googlesamples.github.io/web-fundamentals/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
 
 ##### 改变padding和字体变小
 
@@ -468,7 +468,7 @@ viewport写在head而且只需要声明一次
     }
 ```
     
-[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
+[完整栗子](http://googlesamples.github.io/web-fundamentals/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
 
 ##### 使元素适应宽屏
 
@@ -505,7 +505,7 @@ viewport写在head而且只需要声明一次
     }
 ```
 
-[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
+[完整栗子](http://googlesamples.github.io/web-fundamentals/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
 
 ```css
 	#headline {
@@ -513,7 +513,7 @@ viewport写在head而且只需要声明一次
     }
 ```
 
-[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
+[完整栗子](http://googlesamples.github.io/web-fundamentals/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
 
 
 ###### 浮动视频元素
@@ -535,7 +535,7 @@ video标签在窄屏的情况下设计成全屏宽度显示并且放置在了关
     }
 ```
 
-[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
+[完整栗子](http://googlesamples.github.io/web-fundamentals/samples/getting-started/your-first-multi-screen-site/fixingfirstbreakpoint.html)
 
 ###### 铺垫图片
 
@@ -607,7 +607,7 @@ video标签在窄屏的情况下设计成全屏宽度显示并且放置在了关
     }
 ```
     
-[完整栗子](https://developers.google.com/web/fundamentals/resources/samples/getting-started/your-first-multi-screen-site/content-with-styles.html)
+[完整栗子](http://googlesamples.github.io/web-fundamentals/samples/getting-started/your-first-multi-screen-site/content-with-styles.html)
 
 ##### 结束语
 
